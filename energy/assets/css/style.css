@@ -1,0 +1,427 @@
+body * {
+    font-family: var(--ct-body-font-family);
+}
+
+#tachometer{
+    background:#19505740;
+    margin: auto;
+    width:300px;
+    height:300px;
+    box-shadow: inset 0px 0px 0px 8px #195057;
+    border-radius: 100%;
+    display: block;
+    position: relative;  
+}
+
+
+.ii {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    z-index: 2;
+    box-shadow: 0px 0px 10px 4px #19505740;
+    border-radius: 50%;
+}
+.ii div {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    padding:4px;
+    box-sizing: border-box;
+}
+.ii div span.number {
+    position: absolute;
+    display: block;
+    left: 50%;
+    width: 4px;
+    height: 18px;
+    background: #195057;
+    margin: 0 -5px 0;
+    
+}
+.ii div b {
+    position: absolute;
+    display: block;
+    left: 50%;
+    background: #195057;
+    width: 6px;
+    height: 28px;
+    margin: 0 -5px 0;
+}
+
+
+.num {
+    color:#003941;
+    display: block;
+    position: absolute;
+    width: 0px;
+    font-size:23px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration:none;
+    white-space: nowrap;
+}
+
+.num_1 {transform: rotate(160deg); top: 20px; left: 15px;}
+.num_2 {transform: rotate(128deg); top:18px; left:5px}
+.num_3 {transform: rotate(96deg); top:21px;}
+.num_4 {transform: rotate(64deg); top:20px;}
+.num_5 {transform: rotate(32deg); top:25px; left:-8px}
+.num_6 {transform: rotate(0deg); top:30px; left:-5px}
+.num_7 {transform: rotate(328deg); top:30px; left:-5px}
+.num_8 {transform: rotate(296deg); top:50px; left:-2px;}
+.num_9 {transform: rotate(264deg); top:50px;}
+.num_10 {transform: rotate(232deg); top:50px; left:8px}
+.num_11 {transform: rotate(200deg); top: 32.5px; left: 20px;}
+
+#redline{     
+    width:28px; height:150px;
+    position:absolute;
+    top:272px;
+    right:12px;
+    border-width: 22px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color:#171717 #00adc1 #171717 #171717;
+    transform:rotate(15deg);
+    z-index:1
+    }
+
+
+.line {
+    background: #00adc1;
+    background-image: linear-gradient(to bottom, #00adc1, #343536);
+    height: 0;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    width: 0;
+    transform-origin: 50% 100%;
+    margin: -130px -3px 0;
+    padding: 130px 3px 0;
+    z-index: 2;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(199deg);
+    transition: all ease-out .3s;
+}
+
+.pin {
+    width: 30px;
+    height: 30px;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    background-color: #343536;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to bottom, #00adc1, #343536);
+    z-index: 4;
+}
+
+
+.inner {
+    width: 30px;
+    height: 30px;
+    margin: 10px auto 0;
+    background-color: #343536;
+    border-radius: 100%;
+    box-shadow: inset 0 8px 15px 0 rgba(167, 23, 10, 0.4);
+    position: relative;
+}
+
+
+
+.thermometer,
+.thermometer__tube {
+    font-size: 16px;
+    position: relative;
+}
+
+.thermometer {
+    background-image: linear-gradient(-135deg, hsl(223, 10%, 85%), hsl(223, 10%, 65%));
+    border-radius: 2em;
+    box-shadow:
+        0.2em 0 0.1em hsl(223, 10%, 45%) inset,
+        0 -0.2em 0.1em hsl(223, 10%, 45%) inset,
+        -0.1em 0 0 hsl(223, 10%, 80%) inset,
+        0 0.1em 0 hsl(223, 10%, 80%) inset;
+    margin: auto;
+    width: 10em;
+    height: 20.5em;
+}
+
+.thermometer:before,
+.thermometer__inner,
+.thermometer__ring,
+.thermometer__tube:before {
+    position: absolute;
+}
+
+.thermometer:before,
+.thermometer__inner {
+    left: 1em;
+}
+
+.thermometer:before,
+.thermometer__tube:before {
+    content: "";
+    display: block;
+}
+
+.thermometer:before {
+    background-image: linear-gradient(hsl(223, 10%, 90%), hsl(223, 10%, 80%));
+    border-radius: 1.2em;
+    box-shadow:
+        -0.1em 0.1em 0.1em hsl(223, 10%, 55%) inset,
+        0.2em -0.2em 0.4em hsl(223, 10%, 100%) inset,
+        -0.3em 0.2em 0.4em hsl(223, 10%, 55%) inset,
+        0.1em -0.1em 0.1em hsl(223, 10%, 70%),
+        0.5em -0.5em 0.3em hsl(223, 10%, 65%),
+        0 0 0.4em 0.4em hsl(223, 10%, 100%);
+    top: 1em;
+    width: calc(100% - 2em);
+    height: calc(100% - 2em);
+}
+
+.thermometer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    top: 2em;
+    text-align: center;
+    width: calc(100% - 2em);
+    height: calc(100% - 4em);
+}
+
+.thermometer__c,
+.thermometer__f {
+    background-image:
+        linear-gradient(hsl(0, 0%, 0%) 0.1em, hsla(0, 0%, 0%, 0) 0.1em),
+        linear-gradient(hsl(0, 0%, 0%) 0.1em, hsla(0, 0%, 0%, 0) 0.1em);
+    background-repeat: repeat-y;
+    flex-basis: calc(50% - 0.75em);
+    margin-bottom: 0.125em;
+}
+
+.thermometer__c {
+    background-position: 100% 0;
+    background-size: 0.8em 1em, 0.5em 0.2em;
+    padding-right: 0.5em;
+    padding-top: 1.25em;
+    height: 12.1em;
+}
+
+.thermometer__c .thermometer__label {
+    height: 2em;
+}
+
+.thermometer__f {
+    background-size: 0.8em 1.125em, 0.5em 0.225em;
+    padding-top: 1.5em;
+    padding-left: 0.25em;
+    height: 12.5em;
+}
+
+.thermometer__f .thermometer__label {
+    height: 2.25em;
+}
+
+.thermometer__mercury,
+.thermometer__tube:before {
+    height: 100%;
+}
+
+.thermometer__mercury {
+    background-color: hsl(355, 85%, 40%);
+    box-shadow:
+        -0.1em 0.1em 0.25em hsla(355, 85%, 40%, 0.7),
+        0.05em 0 0 hsla(0, 0%, 100%, 0.5) inset;
+    width: 100%;
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.thermometer__ring {
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0 0.05em 0 0.05em hsla(223, 10%, 30%, 0.4) inset;
+    top: 0.6em;
+    left: calc(50% - 0.3em);
+    width: 0.6em;
+    height: 0.2em;
+}
+
+.thermometer__ring+.thermometer__ring {
+    border-radius: 0 0 50% 50%;
+    box-shadow: 0 -0.05em 0 0.05em hsla(223, 10%, 30%, 0.4) inset;
+    top: 11.2em;
+}
+
+.thermometer__title {
+    flex-basis: 50%;
+}
+
+.thermometer__tube,
+.thermometer__tube:before {
+    border-radius: 0.3em 0.3em 0 0;
+}
+
+.thermometer__tube {
+    box-shadow:
+        -0.1em 0.1em 0.25em hsla(0, 0%, 0%, 0.3),
+        0.05em 0 0 hsla(0, 0%, 100%, 0.5) inset,
+        0.1em 0 0.1em hsla(0, 0%, 0%, 0.2) inset;
+    flex-basis: 0.3em;
+}
+
+.thermometer__tube:before {
+    background: linear-gradient(hsla(0, 0%, 100%, 0.5), hsla(0, 0%, 100%, 0)) 100% 0 / 25% 100% no-repeat;
+    box-shadow: -0.05em 0 0.05em hsla(0, 0%, 0%, 0.2) inset;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.thermometer__bulb {
+    background-image: radial-gradient(100% 100% at 65% 35%, hsl(355, 85%, 55%) 12%, hsl(355, 85%, 40%) 13%, hsl(355, 85%, 30%));
+    border-radius: 50%;
+    box-shadow:
+        0 -0.25em 0.25em hsla(0, 85%, 20%, 0.7),
+        -0.35em 0.35em 0.5em hsl(355, 20%, 50%),
+        0 0 0 0.1em hsl(223, 10%, 60%),
+        0 0 0 0.15em hsl(223, 10%, 90%),
+        0 0 0 0.2em hsl(223, 10%, 30%),
+        0 0 0 0.05em hsl(355, 85%, 30%) inset,
+        -0.1em 0.1em 0 hsl(355, 85%, 43%) inset;
+    margin: auto;
+    width: 2em;
+    height: 2em;
+}
+
+.pressure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.pressure img {
+    width: 200px;
+}
+
+.pressurePin {
+    top: 140px;
+    background-image: linear-gradient(to bottom, #0c5d66, #343536);
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #343536;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 8px 15px 0 rgb(0 0 0 / 50%);
+    z-index: 2;
+}
+
+.pressureLine {
+    top: 140px;
+    margin: -80px -3px 0;
+    padding: 80px 3px 0;
+    background-image: linear-gradient(to bottom, #1f494e, #343536);
+    height: 0;
+    left: 50%;
+    position: absolute;
+    width: 0;
+    transform-origin: 50% 100%;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(-140deg);
+}
+
+.trafficNumber {
+    border: 1px solid;
+    border-radius: 2px;
+    width: max-content;
+    margin: auto;
+    display: flex;
+    font-weight: 600;
+    box-shadow: inset 0px 0px 2px 0.2px #afafaf;
+}
+
+.trafficNumber .passive {
+    color: #dddddd;
+    padding: 0 3px;
+}
+
+.trafficNumber .active {
+    color: black;
+    padding: 0 3px;
+
+}
+
+.trafficNumber :last-child {
+    background-color:black;
+    color: #dddddd;
+    padding: 0 3px;
+
+}
+
+.settingSection .smallInput {
+    width: 40px;
+    height: 20px;
+    display: inline-block;
+    padding: 0
+}
+
+.settingSection #startCount {
+    height: 20px;
+    display: inline-block;
+    padding: 5px;
+    width: auto;
+}
+
+.settingSection p {
+    margin-bottom: 5px
+}
+
+body.authentication-bg-pattern {
+    background-color: #1687cf;
+}
+
+body.authentication-bg-pattern .card {
+    padding: 68.5px 35px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px 0px #010c3c;
+    background-color: #010c3c;
+}
+
+body.authentication-bg-pattern.registration .card {
+    padding: 15px 35px;
+}
+
+body.authentication-bg-pattern.registration .custom-control-input:checked~.custom-control-label::before {
+    color: #1687cf;
+    border-color: #1687cf;
+    background-color: #1687cf;
+}
+
+body.authentication-bg-pattern.registration .custom-control-label {
+    color: white;
+    font-weight: normal;
+}
+
+body.authentication-bg-pattern .auth-form input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #1687cf;
+    border-radius: 0;
+    padding-left: 10px;
+    color: white;
+}
+
+.apexcharts-canvas {
+    margin: auto;
+}
